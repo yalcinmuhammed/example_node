@@ -2,7 +2,7 @@ const respond = require('../helpers/respond');
 const regex = require("../helpers/regex");
 const exampleValidator = {};
 
-exampleValidator.getList = function (req, res, next) {
+exampleValidator.searchRecords = function (req, res, next) {
     req.checkBody({
         startDate: {
             optional: true,

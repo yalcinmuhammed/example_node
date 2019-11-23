@@ -1,9 +1,7 @@
 const RecordModel = require("../models/record.model");
-const regex = require("../helpers/regex");
-
 const recordController = {};
 
-recordController.getList = (startDate, endDate, minCount, maxCount)=>{
+recordController.searchRecords = (startDate, endDate, minCount, maxCount)=>{
     return new Promise((resolve, reject)=>{
         minCount = +minCount || 0;
         maxCount = +maxCount || Number.MAX_VALUE;

@@ -1,9 +1,9 @@
-var mongoose = require('mongoose');
-var logger = require('../helpers/winston');
+const mongoose = require('mongoose');
+const logger = require('../helpers/winston');
 
 mongoose.connect(process.env.MONGODB_CONNECTION_URL);
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', function (err) {
     logger.error("Mongodb connection error", err);
 });

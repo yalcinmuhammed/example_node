@@ -1,18 +1,18 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
 var logger = require("winston");
 var SystemError = require("./errors/system.error");
 var middleware = require('./helpers/middleware');
 var expressValidator = require("express-validator");
 //Env settings
-var config = require("./config");
+require("./config");
 // Mongodb Connection
 require('./connections/mongodb.connection');
 
 var RecordRoute = require('./routes/record.route');
 
 var app = express();
+//CORS Settings
 app.use(middleware.CORS);
 app.use(expressValidator());
 app.use(require('morgan')("combined", {"stream": logger.stream.write}));

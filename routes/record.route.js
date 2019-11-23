@@ -35,8 +35,8 @@ const RecordController = require("../controllers/record.controller");
  *		}
  * @apiSampleRequest http://localhost:3000/api/v1/records
  */
-router.post('/records', [validator.getList], function(req, res, next){
-	RecordController.getList(
+router.post('/records', [validator.searchRecords], function(req, res, next){
+	RecordController.searchRecords(
 		req.body.startDate,
 		req.body.endDate,
 		req.body.minCount,
